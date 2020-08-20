@@ -1,0 +1,7 @@
+Hey!
+
+My name is George P. Tryfiates and I graduated in May with my B.S. in Mathematical Economics. As part of my education, I did a number of econometric research projects. For these projects, I used R programming to collect, manipulate, analyze, and visualize data. However, it's a pretty straightforward language with lots of helpful packages. Though it was required, alot of the language was expected to be self-taught. I would say I'm moderately proficient and adept in using it for my analytical projects. However, I'm not familiar with its many other uses. In terms of CS, I have only taken one introductory course on C++ but have toyed with free online teaching tools for it as well as Python.
+
+Through this course, I want to become a more well-rounded programmer with the skills to deploy multiple languages for projects. I'm hoping with more training that I can improve my understanding of statistical analysis and, by using best-practices in data science, improve my ability to analyze a variety of problems--especially those that are policy/decision-focused.
+
+To me, data science is about using evidence to make decisions and solve problems. I believe it is an investigative role--one that requires the ability to empathize with data sources as well as interpret and analyze them honestly. Perhaps most importantly, it's about narrating and visualizing the insights of research to clearly communicate accurate messages to a lay person.
