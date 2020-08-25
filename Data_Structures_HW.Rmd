@@ -1,0 +1,75 @@
+---
+title: "Data Structures HW"
+author: "George P. Tryfiates"
+subtitle: Aug. 24, 2020
+output:
+  html_document:
+    df_print: paged
+---
+
+**Exercise 1:** In mathematics, the quadratic equation ax2+bx+c=0 can be solved with the formula x=−b±b2−4ac√2a.
+
+Write a function solve_quadratic, that returns both solutions of a generic quadratic as a pair (2-tuple) when the coefficients are given as parameters. It should work like this:
+
+
+```{python}
+import math
+def solve_quatratic(a,b,c):
+    s1 = (-b + math.sqrt(b**2 - 4*a*c ))/(2*a)
+    s2 = (-b - math.sqrt(b**2 - 4*a*c))/(2*a)
+    return tuple(s1,s2)
+```
+
+**Exercise 2:** Get a space-separated list of integers from the user, create a tuple of those integers. Then compute and print the result of hash(tuple).
+```{python}
+l =input("Enter a space-separated list of integers: ")
+l=l.split()
+list_int=[]
+for i in range(len(l)):
+  list_int.append(int(l[i]))
+print("The list of integers: ")
+print(list_int)
+#hash(tuple(l))
+#i was getting a different hash number w/out elements as int's
+print(" ")
+print("Hash # of the Tuple of the List of Integers: ")
+hash(tuple(list_int))
+```
+
+
+**Exercise 3:** Take the following two lists. Create a third list by picking a odd-index elements from the first list and even-index elements from the second.
+
+```{python}
+listOne = [3, 6, 9, 12, 15, 18, 21]
+listTwo = [4, 8, 12, 16, 20, 24, 28]
+listThree = listOne[0:: 2] + listTwo[1:: 2]
+print(listThree)
+```
+
+**Exercise 4:** Take the following list. Slice it into three equal chunks and reverse each list.
+```{python}
+sampleList = [11, 45, 8, 23, 14, 12, 78, 45, 89]
+#print((len(sampleList)/3))
+l_1= sampleList[0:4]; l_2 = sampleList[4:8]; l_3 = sampleList[8:]
+print("The sample list divided into three: ")
+print(l_1, l_2, l_2)
+l_1.reverse()
+l_2.reverse()
+l_3.reverse()
+print(" ")
+print("The three lists with element order reversed: ")
+print(l_1, l_2, l_2)
+```
+
+**Exercise 5:** Iterate through a given list and check if a given element already exists in a dictionary as a key's value. If not, delete it from the list.
+```{python}
+rollNumber = [47, 64, 69, 37, 76, 83, 95, 97]
+sampleDict ={'Zach':47, 'Emma':69, 'Kelly':76, 'Jason':97}
+vals = list(sampleDict.values())
+rollNumber = list(set(rollNumber) & set(vals))
+rollNumber.sort()
+print("A list of integers present in the initial list that intersects with the dictionary's values: ")
+print(rollNumber)
+```
+
+
