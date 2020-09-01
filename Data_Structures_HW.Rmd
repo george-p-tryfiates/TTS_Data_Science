@@ -72,4 +72,31 @@ print("A list of integers present in the initial list that intersects with the d
 print(rollNumber)
 ```
 
+Travis' Solution
+
+```{python}
+tracking = []
+for i in rollNumber:
+  if i not in sampleDict.values():
+    tracking.append(i)
+print(tracking)
+for j in tracking:
+  if j in rollNumber:
+    rollNumber.remove(j)
+print(rollNumber)
+```
+
+Emmanual's Solution
+
+```{python}
+for i in [x for x in rollNumber]:
+  if i not in sampleDict.values():
+    rollNumber.remove(i)
+    print("Removed (%s)" % i)
+  else:
+    print("Skipped %s" % i)
+    contintue
+print()
+print("Final list:", rollNumber)
+```
 
