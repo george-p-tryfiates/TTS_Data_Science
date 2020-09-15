@@ -35,11 +35,11 @@ class Student(Person):
     def __calculate__(self, avg):
         if 90<=avg<=100:
             return "A"
-        elif 80<=avg<=89:
+        elif 80<=avg<90:
             return "B"
-        elif 70<=avg<=79:
+        elif 70<=avg<80:
             return "C"
-        elif 60<=avg<=69:
+        elif 60<=avg<70:
             return "D"
         else:
             return "F"
