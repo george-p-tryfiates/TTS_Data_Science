@@ -1,0 +1,136 @@
+---
+title: "Intro to R HW"
+author: "George Tryfiates"
+date: "8 October 2020"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(include = TRUE, comment=NA, message = FALSE, warning = FALSE, options(scipen = 999, digits = 4))
+#multicollinearity
+library(GGally)
+library(mctest)
+library(corpcor)
+library(ggfortify)
+library(ggrepel)
+library(AER)
+library(tidyverse)
+#library(summariser)
+#don't rly need summariser
+library(summarytools)
+library(estimatr)
+library(readxl)
+library(plm) 
+#panel data
+library(stargazer) 
+#we prolly only need jtoools
+library(magrittr) 
+#pipe data^. mutating data (create interaction variable)
+library(janitor)
+#broom- allows you to change the case of all the variables
+library(moderndive)
+#little more versatile internally, but not very pretty
+library(jtools)
+#"journal tools" regression output pretty
+library(huxtable)
+library(readxl)
+library(flextable)
+library(RColorBrewer)
+
+```
+
+Set the Working Directory:
+
+```{r}
+setwd("C:/Users/seeuo/Documents/Tech Talent South/TTS_Data_Science/module13")
+```
+
+
+Read in the Data (I put it in excel):
+
+```{r}
+meta <- read_xlsx("meta.xlsx")
+meta
+```
+
+Select only sex and treatment: 
+
+```{r}
+meta %>% select(sex, treatment)
+```
+
+Saved the dataframe as a tibble to make things easier
+
+```{r}
+meta %<>% as_tibble()
+```
+
+Renamed the index to index:
+
+```{r}
+meta %<>% rename(index = ...1)
+```
+
+Selecting certain rows:
+
+```{r}
+filt <- c(5, 7, 9, 10)
+meta %>% slice(filt)
+```
+
+Filtering rows:
+
+```{r}
+meta %>% filter(treatment == "P")
+```
+
+Filtering rows of selected columns:
+
+```{r}
+meta %>% filter(myc > 5000) %>% select(stage, treatment)
+```
+
+Selecting all but treatment:
+
+```{r}
+meta %>% select(-treatment)
+```
+
+Selecting all but certain rows (this is long and clunky :P ):
+
+```{r}
+filt = c(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE)
+
+meta[filt, ]
+```
+
+Slicing rows:
+
+```{r}
+meta[1:6, ]
+```
+
+Adding a column:
+
+```{r}
+pre_treatment = c(T, F, F, F, T, T, F, T, F, F, T, T)
+meta %<>% mutate(pre_treatment)
+```
+
+```{r}
+meta
+```
+
+Renaming the columns as letters:
+
+```{r}
+meta %<>% rename(A = index, B =sex,C = stage, D = treatment , E = myc, F = pre_treatment)
+```
+
+```{r}
+meta
+```
+
+
